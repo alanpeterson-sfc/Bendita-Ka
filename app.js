@@ -223,6 +223,15 @@ function setupEventListeners() {
   cartClose.addEventListener("click", closeCart);
   cartBackdrop.addEventListener("click", closeCart);
 
+  // Wishlist Drawer open/close listeners
+  const wishlistTrigger = document.getElementById("wishlistTrigger");
+  if (wishlistTrigger) {
+    wishlistTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWishlist();
+    });
+  }
+
   // Mobile Drawer
   const menuToggle = document.getElementById("menuToggle");
   const mobileDrawer = document.getElementById("mobileDrawer");
