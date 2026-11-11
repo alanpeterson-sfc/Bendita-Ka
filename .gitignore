@@ -1,0 +1,11 @@
+scraped_raw.html
+parse.py
+extract_products.py
+find_banners.py
+fetch_more_images.py
+inspect_details.py
+all_scraped_product_images.txt
+products.json
+assets_info.txt
+.vscode/
+.gemini/

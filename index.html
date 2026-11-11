@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BENDITA KA | Alta Costura Esportiva & Seamless de Luxo</title>
+  <meta name="description" content="Bendita Ka — Roupas fitness de luxo sem costura. Alta compressão, toque acetinado e sofisticação para o treino e o lifestyle contemporâneo.">
+  
+  <!-- Google Fonts: Syne & Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="marquee-track">
+      <span>FRETE EXPRESSO CORTESIA EM COMPRAS ACIMA DE R$ 399</span>
+      <span class="sep">•</span>
+      <span>TECNOLOGIA SEAMLESS ULTRA FIT DE ALTA COMPRESSÃO</span>
+      <span class="sep">•</span>
+      <span>PARCELE EM ATÉ 6X SEM JUROS OU 5% OFF NO PIX</span>
+      <span class="sep">•</span>
+      <span>BENDITA KA LUXE COLLECTION 2026</span>
+      <span class="sep">•</span>
+      <span>FRETE EXPRESSO CORTESIA EM COMPRAS ACIMA DE R$ 399</span>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="luxury-header" id="header">
+    <div class="header-inner container">
+      <!-- Mobile menu button -->
+      <button class="mobile-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <!-- Left Navigation -->
+      <nav class="nav-left">
+        <a href="#lancamentos" class="nav-link">Lançamentos</a>
+        <a href="#colecao" class="nav-link">Coleção Seamless</a>
+        <a href="#tecnologia" class="nav-link">Tecnologia</a>
+        <a href="#sobre" class="nav-link">O Manifesto</a>
+      </nav>
+
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Bendita Ka Página Inicial">
+        <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/themes/common/logo-1203235547-1753151584-65f429eb4436de7d74fdfcc0c3a576a51753151584.png?0" alt="Bendita Ka Logo" class="logo-img">
+      </a>
+
+      <!-- Right Actions -->
+      <div class="nav-right">
+        <button class="icon-btn search-trigger" aria-label="Pesquisar" onclick="openSearchModal()">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="icon-btn wishlist-trigger" aria-label="Favoritos" onclick="openWishlistModal()">
+          <i data-lucide="heart"></i>
+          <span class="badge" id="wishlistCount">0</span>
+        </button>
+        <button class="icon-btn cart-trigger" id="cartTrigger" aria-label="Sacola de Compras">
+          <i data-lucide="shopping-bag"></i>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-title">BENDITA KA</span>
+      <button class="drawer-close" id="drawerClose"><i data-lucide="x"></i></button>
+    </div>
+    <div class="drawer-content">
+      <a href="#lancamentos" class="mobile-link" onclick="closeDrawer()">Lançamentos</a>
+      <a href="#colecao" class="mobile-link" onclick="closeDrawer()">Coleção Completa</a>
+      <a href="#tecnologia" class="mobile-link" onclick="closeDrawer()">Tecnologia de Fios</a>
+      <a href="#sobre" class="mobile-link" onclick="closeDrawer()">O Manifesto</a>
+      <a href="#vip" class="mobile-link" onclick="closeDrawer()">Clube VIP Privé</a>
+      <div class="drawer-footer">
+        <p>Atendimento Concierge WhatsApp</p>
+        <a href="https://wa.me/5511999999999" target="_blank" class="concierge-link">
+          <i data-lucide="message-circle"></i> Falar com Personal Shopper
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Hero Section (Editorial Luxury) -->
+  <section class="hero-section">
+    <div class="hero-media-wrapper">
+      <div class="hero-gradient-overlay"></div>
+      <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/products/whatsapp-image-2026-05-11-at-14-29-53-466fdc96bd659ac93e17788892665622-640-0.webp" alt="Bendita Ka Luxo Fitness" class="hero-bg-img hero-img-1 active">
+      <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/products/4-4-3c31c5acc708fe49d217786945789227-640-0.webp" alt="Seamless Collection" class="hero-bg-img hero-img-2">
+      <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/products/top-rosa-a967a2b8a9b9734b6217787726859433-640-0.webp" alt="Alta Performance" class="hero-bg-img hero-img-3">
+    </div>
+
+    <div class="hero-content container">
+      <div class="hero-pill">
+        <span class="live-dot"></span> ÉDITION LIMITÉE • COLLECTION 2026
+      </div>
+      <h1 class="hero-title">
+        A Arte do Movimento.<br>
+        <em>A Precisão do Luxo.</em>
+      </h1>
+      <p class="hero-desc">
+        Tecnologia Seamless italiana desenhada para moldar a silhueta com zero costuras, compressão inteligente e elegância absoluta. Do treino de alta performance ao après-gym.
+      </p>
+      <div class="hero-actions">
+        <a href="#colecao" class="btn btn-primary">
+          <span>Explorar Coleção</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#tecnologia" class="btn btn-outline">
+          <span>Conhecer o Tecido</span>
+        </a>
+      </div>
+
+      <!-- Hero Trust Highlights -->
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <span class="metric-num">100%</span>
+          <span class="metric-label">Zero Transparência</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-num">360°</span>
+          <span class="metric-label">Compressão Anatômica</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-num">Ultra</span>
+          <span class="metric-label">Toque Pele de Pêssego</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Value Props / Perks -->
+  <section class="luxury-perks">
+    <div class="container perks-grid">
+      <div class="perk-box">
+        <div class="perk-icon"><i data-lucide="sparkles"></i></div>
+        <div>
+          <h4>Design Sem Costura</h4>
+          <p>Zero atrito cutâneo, conforto térmico absoluto e caimento escultural.</p>
+        </div>
+      </div>
+      <div class="perk-box">
+        <div class="perk-icon"><i data-lucide="shield-check"></i></div>
+        <div>
+          <h4>Squat Proof Certificado</h4>
+          <p>Gramatura nobre desenvolvida para agachamentos sem nenhuma transparência.</p>
+        </div>
+      </div>
+      <div class="perk-box">
+        <div class="perk-icon"><i data-lucide="feather"></i></div>
+        <div>
+          <h4>Cós Alto Modelador</h4>
+          <p>Sustentação na medida certa que abraça a linha da cintura sem enrolar.</p>
+        </div>
+      </div>
+      <div class="perk-box">
+        <div class="perk-icon"><i data-lucide="repeat"></i></div>
+        <div>
+          <h4>Primeira Troca Cortesia</h4>
+          <p>Experimente no conforto de casa com garantia de troca sem custos em 30 dias.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog / Main Collection Section -->
+  <section class="collection-section" id="colecao">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">CATÁLOGO EXCLUSIVO</span>
+        <h2 class="section-title">A Coleção Bendita Ka</h2>
+        <p class="section-subtitle">Peças originais com curadoria minimalista, alta durabilidade e valores oficiais.</p>
+      </div>
+
+      <!-- Filters & Sorting Bar -->
+      <div class="catalog-controls">
+        <div class="filter-chips">
+          <button class="filter-chip active" data-filter="all">Todos os Modelos (<span class="chip-count">8</span>)</button>
+          <button class="filter-chip" data-filter="top">Tops Seamless (<span class="chip-count">3</span>)</button>
+          <button class="filter-chip" data-filter="legging">Leggings (<span class="chip-count">2</span>)</button>
+          <button class="filter-chip" data-filter="shorts">Shorts (<span class="chip-count">3</span>)</button>
+        </div>
+
+        <div class="catalog-sort">
+          <label for="sortSelect"><i data-lucide="sliders-horizontal"></i> Ordenar:</label>
+          <select id="sortSelect">
+            <option value="featured">Destaques da Temporada</option>
+            <option value="price-asc">Menor Valor (R$)</option>
+            <option value="price-desc">Maior Valor (R$)</option>
+            <option value="name">Nome da Peça</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Injected via JavaScript from real store data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotlight Editorial / Lookbook Split -->
+  <section class="editorial-spotlight" id="lancamentos">
+    <div class="container">
+      <div class="spotlight-card">
+        <div class="spotlight-content">
+          <span class="spotlight-pill">SIGNATURE SET</span>
+          <h3 class="spotlight-title">O Conjunto Essência:<br>Poder & Suavidade</h3>
+          <p class="spotlight-text">
+            Projetado para transitar perfeitamente entre seu treino de musculação, aula de pilates e um almoço de negócios com blazer oversized. A trama tridimensional da Bendita Ka absorve a umidade rapidamente, mantendo você fresca, segura e incrivelmente alinhada.
+          </p>
+          <div class="spotlight-specs">
+            <div class="spec-row">
+              <i data-lucide="check-circle-2"></i>
+              <span>Fio de poliamida com elastano premium de alta recuperação</span>
+            </div>
+            <div class="spec-row">
+              <i data-lucide="check-circle-2"></i>
+              <span>Compressão graduada que ativa a circulação muscular</span>
+            </div>
+            <div class="spec-row">
+              <i data-lucide="check-circle-2"></i>
+              <span>Alças duplas anatômicas com sustentação de médio a alto impacto</span>
+            </div>
+          </div>
+          <div class="spotlight-cta">
+            <button class="btn btn-primary" onclick="quickAddSet()">
+              <span>Comprar Conjunto Completo</span>
+              <span class="price-bubble">R$ 358,00</span>
+            </button>
+            <span class="installment-tip">ou 6x de R$ 59,66 sem juros</span>
+          </div>
+        </div>
+
+        <div class="spotlight-visual">
+          <div class="dual-imagery">
+            <div class="img-frame frame-main">
+              <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/products/img_6033-jpg-3-90940027f7dd9c2cd017788901234970-640-0.webp" alt="Top Seamless Bendita">
+              <span class="image-floating-tag">Top Seamless • R$ 149</span>
+            </div>
+            <div class="img-frame frame-secondary">
+              <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/products/4-4-3c31c5acc708fe49d217786945789227-640-0.webp" alt="Legging Seamless Essencial">
+              <span class="image-floating-tag">Legging Essencial • R$ 209</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fabric & Technology Deep Dive -->
+  <section class="tech-section" id="tecnologia">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">ENGENHARIA TÊXTIL</span>
+        <h2 class="section-title">A Ciência por trás do Toque</h2>
+        <p class="section-subtitle">Por que o Seamless Bendita Ka é considerado a segunda pele definitiva.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-num">01</div>
+          <h3>Zero-Seam Tech</h3>
+          <p>Tecelagem circular que elimina as costuras laterais. Não aperta, não assa a pele e garante total liberdade nas amplitudes máximas do movimento.</p>
+          <div class="tech-badge">Anti-Chafing</div>
+        </div>
+
+        <div class="tech-card active-card">
+          <div class="tech-num">02</div>
+          <h3>Modelagem Sculpt 3D</h3>
+          <p>Texturas caneladas inteligentes distribuídas estrategicamente para erguer o bumbum, desenhar os flancos e segurar o abdômen com extremo conforto.</p>
+          <div class="tech-badge">Efeito Empina & Modela</div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-num">03</div>
+          <h3>Dry Silk Protection</h3>
+          <p>Fibras hidrofílicas respiráveis que conduzem a transpiração para a camada externa, secando até 3x mais rápido que os tecidos esportivos comuns.</p>
+          <div class="tech-badge">Conforto Térmico</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Size Guide & Fit Assistant Modal Trigger -->
+  <section class="guide-banner">
+    <div class="container guide-inner">
+      <div class="guide-text">
+        <span class="guide-badge"><i data-lucide="ruler"></i> PROVADOR VIRTUAL BENDITA KA</span>
+        <h3>Dúvidas sobre o tamanho ideal?</h3>
+        <p>Nossa modelagem seamless possui elasticidade bidirecional inteligente que veste do 34 ao 44 com ajuste sob medida.</p>
+      </div>
+      <button class="btn btn-outline-light" onclick="openSizeGuideModal()">
+        <span>Consultar Tabela de Medidas</span>
+        <i data-lucide="chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Brand Manifesto & Lifestyle Quotes -->
+  <section class="manifesto-section" id="sobre">
+    <div class="container">
+      <div class="manifesto-wrapper">
+        <div class="manifesto-quote-mark">“</div>
+        <p class="manifesto-quote">
+          Bendita Ka foi criada para a mulher que não negocia padrão. Ela treina pesado, comanda seu dia com autoridade e exige roupas esportivas que reflitam sua sofisticação intrínseca.
+        </p>
+        <div class="manifesto-author">
+          <strong>BENDITA KA</strong>
+          <span>Athleisure de Luxo • Movimente-se com Propósito</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews / Social Proof -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">EXPERIÊNCIA DE QUEM VESTE</span>
+        <h2 class="section-title">Avaliações Verificadas</h2>
+        <div class="rating-stars-overall">
+          <div class="stars">
+            <i data-lucide="star" class="star filled"></i>
+            <i data-lucide="star" class="star filled"></i>
+            <i data-lucide="star" class="star filled"></i>
+            <i data-lucide="star" class="star filled"></i>
+            <i data-lucide="star" class="star filled"></i>
+          </div>
+          <span>4.9 / 5.0 baseado em +420 pedidos entregues</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            ★★★★★
+          </div>
+          <p class="review-body">
+            "A legging cinza essencial é inacreditável. O tecido é encorpado, não marca nadinha de celulite e no agachamento pesado não fica transparente. Comprei 3 cores!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="avatar">MC</div>
+            <div>
+              <strong>Mariana Castilho</strong>
+              <span>Cliente Verificada • São Paulo, SP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            ★★★★★
+          </div>
+          <p class="review-body">
+            "O acabamento dos tops é nível marcas internacionais que custam o dobro. O toque do tecido é macio como seda e dá uma segurança perfeita para treinar ombro e costas."
+          </p>
+          <div class="reviewer-meta">
+            <div class="avatar">BV</div>
+            <div>
+              <strong>Beatriz Vasconcelos</strong>
+              <span>Praticante de Cross & Musculação • RJ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            ★★★★★
+          </div>
+          <p class="review-body">
+            "O shorts terracota veste perfeito! Não enrola na coxa durante o cárdio e o cós fica firme na cintura sem machucar. Embalagem com cheirinho maravilhoso."
+          </p>
+          <div class="reviewer-meta">
+            <div class="avatar">LS</div>
+            <div>
+              <strong>Larissa Silveira</strong>
+              <span>Pilates & Running • Curitiba, PR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Concierge Newsletter & Club Privé -->
+  <section class="vip-section" id="vip">
+    <div class="container">
+      <div class="vip-box">
+        <div class="vip-badge"><i data-lucide="crown"></i> CLUBE BENDITA KA PRIVÉ</div>
+        <h2>Acesso Antecipado aos Drops</h2>
+        <p>Inscreva-se para receber convites exclusivos de novas cores, cupons de boas-vindas de 10% OFF e atendimento personalizado.</p>
+        <form class="vip-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Digite seu melhor e-mail pessoal..." required id="vipEmail">
+          <button type="submit" class="btn btn-primary">
+            <span>Garantir 10% OFF</span>
+            <i data-lucide="send"></i>
+          </button>
+        </form>
+        <span class="vip-disclaimer">Zero spam. Cancele sua inscrição quando desejar com 1 clique.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="luxury-footer">
+    <div class="container footer-top">
+      <div class="footer-col brand-col">
+        <img src="https://dcdn-us.mitiendanube.com/stores/005/325/256/themes/common/logo-1203235547-1753151584-65f429eb4436de7d74fdfcc0c3a576a51753151584.png?0" alt="Bendita Ka" class="footer-logo">
+        <p class="brand-phrase">
+          A fusão impecável entre a moda atlética de alta costura e a performance sem costura.
+        </p>
+        <div class="social-links">
+          <a href="https://instagram.com/benditaka" target="_blank" aria-label="Instagram Bendita Ka">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp Bendita Ka">
+            <i data-lucide="phone"></i>
+          </a>
+          <a href="mailto:contato@benditaka.com.br" aria-label="E-mail">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Coleção</h4>
+        <ul class="footer-links">
+          <li><a href="#colecao" onclick="filterCatalog('top')">Tops Esportivos Seamless</a></li>
+          <li><a href="#colecao" onclick="filterCatalog('legging')">Leggings Alta Compressão</a></li>
+          <li><a href="#colecao" onclick="filterCatalog('shorts')">Shorts Meia Coxa Modeladores</a></li>
+          <li><a href="#colecao">Conjuntos Coordenados</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Atendimento & Apoio</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="openSizeGuideModal(); return false;">Tabela de Medidas & Guia</a></li>
+          <li><a href="#" onclick="openPolicyModal('envio'); return false;">Prazos e Entregas</a></li>
+          <li><a href="#" onclick="openPolicyModal('trocas'); return false;">Política de Trocas Sem Custo</a></li>
+          <li><a href="#" onclick="openPolicyModal('cuidados'); return false;">Como Cuidar das Suas Peças</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Segurança & Pagamentos</h4>
+        <p class="payment-desc">Ambiente criptografado SSL 256 bits com liquidação segura.</p>
+        <div class="payment-methods">
+          <span class="pay-tag"><i data-lucide="qr-code"></i> PIX Instantâneo (-5%)</span>
+          <span class="pay-tag"><i data-lucide="credit-card"></i> Cartões até 6x</span>
+          <span class="pay-tag"><i data-lucide="shield"></i> Compra Protegida</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 BENDITA KA. Todos os direitos reservados. CNPJ sob consulta.</p>
+      <div class="legal-links">
+        <a href="#" onclick="openPolicyModal('termos'); return false;">Termos de Uso</a>
+        <span>•</span>
+        <a href="#" onclick="openPolicyModal('privacidade'); return false;">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProductModal()"><i data-lucide="x"></i></button>
+      <div class="modal-grid" id="modalProductContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-backdrop" id="sizeGuideModal">
+    <div class="modal-container size-modal-container">
+      <button class="modal-close-btn" onclick="closeSizeGuideModal()"><i data-lucide="x"></i></button>
+      <div class="size-modal-content">
+        <span class="section-tag">GUIA DE MEDIDAS</span>
+        <h3 class="modal-title">Encontre seu Caimento Ideal</h3>
+        <p class="modal-desc">Nossas peças seamless contêm fios de memória de forma com alto percentual de elastano, moldando-se com perfeição ao corpo.</p>
+        
+        <div class="table-responsive">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Tamanho</th>
+                <th>Manequim</th>
+                <th>Busto (cm)</th>
+                <th>Cintura (cm)</th>
+                <th>Quadril (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>P</strong></td>
+                <td>34 - 36</td>
+                <td>80 - 88</td>
+                <td>62 - 70</td>
+                <td>88 - 96</td>
+              </tr>
+              <tr>
+                <td><strong>M</strong></td>
+                <td>38 - 40</td>
+                <td>89 - 96</td>
+                <td>71 - 79</td>
+                <td>97 - 105</td>
+              </tr>
+              <tr>
+                <td><strong>G</strong></td>
+                <td>42 - 44</td>
+                <td>97 - 106</td>
+                <td>80 - 89</td>
+                <td>106 - 116</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="fit-tips">
+          <div class="tip-card">
+            <i data-lucide="info"></i>
+            <div>
+              <strong>Ficou na dúvida entre dois tamanhos?</strong>
+              <p>Se você prefere compressão mais firme e modeladora, opte pelo menor. Se prefere sensação de leveza total para o dia a dia, escolha o maior.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="closeSizeGuideModal()">Entendi, Voltar às Compras</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-backdrop" id="searchModal">
+    <div class="modal-container search-modal-container">
+      <button class="modal-close-btn" onclick="closeSearchModal()"><i data-lucide="x"></i></button>
+      <div class="search-modal-content">
+        <div class="search-input-wrap">
+          <i data-lucide="search"></i>
+          <input type="text" id="searchInput" placeholder="Buscar por peça, cor ou modelo (ex: legging, top rosa, shorts...)" oninput="handleSearch(this.value)">
+        </div>
+        <div class="search-results-list" id="searchResults">
+          <!-- Live results -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <h3>Sua Sacola de Luxo</h3>
+        <span class="cart-items-count">(<span id="cartDrawerCount">0</span> itens)</span>
+      </div>
+      <button class="cart-close-btn" id="cartClose"><i data-lucide="x"></i></button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="shipping-progress-box">
+      <div class="progress-message" id="shippingMessage">
+        Faltam <strong>R$ 399,00</strong> para <strong>Frete Expresso Cortesia</strong>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="shippingFill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-line pix-highlight">
+        <span>À vista no PIX (5% off)</span>
+        <span id="cartPixTotal">R$ 0,00</span>
+      </div>
+      <div class="cart-installments-info" id="cartInstallments">
+        ou em até 6x sem juros
+      </div>
+      <button class="btn btn-primary btn-checkout" onclick="proceedToCheckout()">
+        <span>Finalizar Pedido Seguro</span>
+        <i data-lucide="lock"></i>
+      </button>
+      <div class="cart-guarantee">
+        <i data-lucide="check-circle-2"></i>
+        <span>Envio rápido e sigiloso para todo o Brasil</span>
+      </div>
+    </div>
+  </div>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- WhatsApp Floating Concierge Button -->
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20atendimento%20personalizado%20sobre%20as%20pe%C3%A7as%20Bendita%20Ka" target="_blank" class="floating-whatsapp" aria-label="Atendimento WhatsApp">
+    <span class="floating-tooltip">Personal Shopper Online</span>
+    <i data-lucide="message-circle"></i>
+  </a>
+
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
+
