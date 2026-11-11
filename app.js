@@ -252,6 +252,7 @@ function setupEventListeners() {
       closeSizeGuideModal();
       closeSearchModal();
       closeCart();
+      closeWishlist();
       closeDrawer();
     }
   });
@@ -355,7 +356,7 @@ window.toggleWishlist = function(productId) {
     showToast(`"${product.name}" adicionado aos seus favoritos.`);
   } else {
     state.wishlist.splice(index, 1);
-    showToast(`Item removido dos favoritos.`);
+    showToast(`"${product.name}" removido dos favoritos.`);
   }
 
   localStorage.setItem("bk_wishlist", JSON.stringify(state.wishlist));
@@ -365,15 +366,89 @@ window.toggleWishlist = function(productId) {
 
 function updateWishlistUI() {
   const countEl = document.getElementById("wishlistCount");
+  const drawerCountEl = document.getElementById("wishlistDrawerCount");
   if (countEl) countEl.textContent = state.wishlist.length;
+  if (drawerCountEl) drawerCountEl.textContent = state.wishlist.length;
+  renderWishlistDrawerItems();
 }
 
-window.openWishlistModal = function() {
-  if (state.wishlist.length === 0) {
-    showToast("Sua lista de desejos está vazia no momento.");
+function renderWishlistDrawerItems() {
+  const container = document.getElementById("wishlistItemsContainer");
+  if (!container) return;
+
+  const favoriteProducts = BENDITA_PRODUCTS.filter(p => state.wishlist.includes(p.id));
+
+  if (favoriteProducts.length === 0) {
+    container.innerHTML = `
+      <div class="wishlist-empty">
+        <i data-lucide="heart"></i>
+        <h4>Nenhuma peça favoritada</h4>
+        <p>Clique no ícone de coração nos produtos para salvar suas peças preferidas aqui.</p>
+      </div>
+    `;
+    lucide.createIcons();
     return;
   }
-  showToast(`Você possui ${state.wishlist.length} peça(s) favorita(s) salva(s).`);
+
+  container.innerHTML = favoriteProducts.map(product => `
+    <div class="wishlist-item" id="wish-item-${product.id}">
+      <img src="${product.images[0]}" alt="${product.name}" class="wishlist-item-img" onclick="openProductModal('${product.id}'); closeWishlist();">
+      <div class="wishlist-item-info">
+        <h4 class="wishlist-item-title" onclick="openProductModal('${product.id}'); closeWishlist();">${product.name}</h4>
+        <div class="wishlist-item-meta">${product.categoryLabel} • ${product.colorName}</div>
+        <div class="wishlist-item-price">${formatPrice(product.price)}</div>
+        <button class="wishlist-btn-add" onclick="moveWishlistToCart('${product.id}')">
+          <i data-lucide="shopping-bag"></i> Adicionar à Sacola
+        </button>
+      </div>
+      <div class="wishlist-item-actions">
+        <button class="wishlist-item-remove" onclick="toggleWishlist('${product.id}')" title="Remover dos favoritos">
+          <i data-lucide="trash-2"></i>
+        </button>
+      </div>
+    </div>
+  `).join("");
+
+  lucide.createIcons();
+}
+
+window.openWishlist = function() {
+  const drawer = document.getElementById("wishlistDrawer");
+  const backdrop = document.getElementById("wishlistBackdrop");
+  if (!drawer || !backdrop) return;
+  updateWishlistUI();
+  drawer.classList.add("active");
+  backdrop.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+window.closeWishlist = function() {
+  const drawer = document.getElementById("wishlistDrawer");
+  const backdrop = document.getElementById("wishlistBackdrop");
+  if (drawer) drawer.classList.remove("active");
+  if (backdrop) backdrop.classList.remove("active");
+  document.body.style.overflow = "";
+};
+
+window.openWishlistModal = function() {
+  openWishlist();
+};
+
+window.moveWishlistToCart = function(productId) {
+  addToCart(productId, "M", 1);
+  closeWishlist();
+};
+
+window.addAllWishlistToCart = function() {
+  if (state.wishlist.length === 0) {
+    showToast("Nenhuma peça para adicionar à sacola.");
+    return;
+  }
+  state.wishlist.forEach(id => {
+    addToCart(id, "M", 1);
+  });
+  closeWishlist();
+  showToast("Todas as peças favoritadas foram adicionadas à sacola!");
 };
 
 // Cart Engine

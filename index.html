@@ -625,6 +625,33 @@
   </div>
   <div class="cart-backdrop" id="cartBackdrop"></div>
 
+  <!-- Wishlist Slide-Over Drawer (Favoritos) -->
+  <div class="wishlist-drawer" id="wishlistDrawer">
+    <div class="wishlist-header">
+      <div class="wishlist-title-wrap">
+        <h3>Peças Salvas</h3>
+        <span class="wishlist-items-count">(<span id="wishlistDrawerCount">0</span> itens)</span>
+      </div>
+      <button class="wishlist-close-btn" id="wishlistClose" onclick="closeWishlist()"><i data-lucide="x"></i></button>
+    </div>
+
+    <div class="wishlist-subbar">
+      <span>Curadoria pessoal de peças favoritas</span>
+    </div>
+
+    <div class="wishlist-items" id="wishlistItemsContainer">
+      <!-- Wishlist items dynamically populated -->
+    </div>
+
+    <div class="wishlist-footer">
+      <button class="btn btn-primary btn-wishlist-all" onclick="addAllWishlistToCart()">
+        <i data-lucide="shopping-bag"></i>
+        <span>Mover Todas para a Sacola</span>
+      </button>
+    </div>
+  </div>
+  <div class="wishlist-backdrop" id="wishlistBackdrop" onclick="closeWishlist()"></div>
+
   <!-- Toast Notification System -->
   <div class="toast-container" id="toastContainer"></div>
 
