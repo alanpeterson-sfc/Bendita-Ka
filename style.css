@@ -152,27 +152,30 @@ img {
 }
 
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 84px;
+  gap: 20px;
 }
 
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 24px;
+  white-space: nowrap;
 }
 
 .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 500;
   color: var(--text-primary);
   position: relative;
   transition: var(--transition-fast);
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -191,11 +194,10 @@ img {
 }
 
 .brand-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 16px;
 }
 
 /* The original logo has white text, so on white background we invert it to pure luxury black */
@@ -215,6 +217,7 @@ img {
 .nav-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 14px;
 }
 
@@ -2181,6 +2184,16 @@ img {
 
 /* Responsive Media Queries */
 @media (max-width: 1100px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .nav-left {
+    display: none;
+  }
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
